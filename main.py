@@ -1,8 +1,22 @@
 from kivy.app import App
+from kivy.lang import Builder
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 
+from kivymd.app import MDApp
+
+KV = '''
+BoxLayout:
+    padding: "10dp"
+
+    MDTextField:
+        id: text_field_error
+        hint_text: "Helper text on error (press 'Enter')"
+        helper_text: "There will always be a mistake"
+        helper_text_mode: "on_error"
+        pos_hint: {"center_y": .5}
+'''
 
 class MainApp(App):
     def build(self):
